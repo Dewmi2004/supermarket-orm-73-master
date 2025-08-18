@@ -32,16 +32,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 4/3/2025 10:29 AM
- * Project: SupermarketFX
- * --------------------------------------------
- **/
+
 
 public class CustomerPageController implements Initializable {
     public Label lblId;

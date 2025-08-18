@@ -6,16 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/11/2025 9:38 AM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
+
 
 @AllArgsConstructor
 @NoArgsConstructor

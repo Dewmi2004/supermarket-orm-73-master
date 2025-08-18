@@ -19,16 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/11/2025 10:24 AM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
+
 
 // model mapper
 public class CustomerBOImpl implements CustomerBO {

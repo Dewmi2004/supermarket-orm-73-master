@@ -7,16 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 4/24/2025 1:57 PM
- * Project: SupermarketFX
- * --------------------------------------------
- **/
+
 
 // This class contains utility methods for executing CRUD operations (Create, Read, Update, Delete) with the database.
 public class CrudUtil {

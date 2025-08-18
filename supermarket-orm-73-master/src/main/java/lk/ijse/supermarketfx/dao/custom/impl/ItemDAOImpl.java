@@ -8,16 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/1/2025 12:43 PM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
+
 
 public class ItemDAOImpl implements ItemDAO {
     @Override

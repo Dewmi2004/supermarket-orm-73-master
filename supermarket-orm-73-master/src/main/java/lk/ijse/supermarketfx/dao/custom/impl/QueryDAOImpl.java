@@ -12,16 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/1/2025 1:16 PM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
+
 
 public class QueryDAOImpl implements QueryDAO {
     @Override

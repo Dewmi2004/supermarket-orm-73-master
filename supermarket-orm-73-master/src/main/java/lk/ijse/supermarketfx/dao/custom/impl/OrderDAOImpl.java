@@ -11,16 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/1/2025 1:01 PM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
 
 public class OrderDAOImpl implements OrderDAO {
     @Override

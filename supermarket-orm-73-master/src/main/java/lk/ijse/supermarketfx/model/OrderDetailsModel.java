@@ -6,16 +6,7 @@ import lk.ijse.supermarketfx.util.CrudUtil;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 4/24/2025 9:32 AM
- * Project: SupermarketFX
- * --------------------------------------------
- **/
+
 
 public class OrderDetailsModel {
     private final ItemModel itemModel = new ItemModel();

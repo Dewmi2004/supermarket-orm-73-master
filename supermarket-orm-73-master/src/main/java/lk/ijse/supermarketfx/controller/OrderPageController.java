@@ -26,16 +26,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 4/3/2025 10:30 AM
- * Project: SupermarketFX
- * --------------------------------------------
- **/
+
 
 public class OrderPageController implements Initializable {
 

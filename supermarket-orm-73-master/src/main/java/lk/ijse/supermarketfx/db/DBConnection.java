@@ -4,16 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 4/3/2025 1:54 PM
- * Project: SupermarketFX
- * --------------------------------------------
- **/
+
 
 public class DBConnection {
     private static DBConnection dbConnection;

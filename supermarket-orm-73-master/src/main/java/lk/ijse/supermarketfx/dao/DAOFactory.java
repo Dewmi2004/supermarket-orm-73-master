@@ -2,16 +2,7 @@ package lk.ijse.supermarketfx.dao;
 
 import lk.ijse.supermarketfx.dao.custom.impl.*;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/1/2025 1:34 PM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
+
 
 // DAOFactory (Interface with getDAO method)
 //     <- DAOFactoryImpl (concentrate implication)

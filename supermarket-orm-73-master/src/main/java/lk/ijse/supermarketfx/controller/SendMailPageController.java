@@ -13,16 +13,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 5/20/2025 1:21 PM
- * Project: SupermarketFX
- * --------------------------------------------
- **/
+
 
 public class SendMailPageController {
 

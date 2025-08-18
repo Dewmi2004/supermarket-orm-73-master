@@ -29,7 +29,7 @@ public class FactoryConfiguration {
         }
         return factoryConfiguration;
     }
-    public Session getSessionFactory() {
+    public Session getSession() {
         Session session= sessionFactory.openSession();
         return session;
     }

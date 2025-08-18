@@ -3,16 +3,7 @@ package lk.ijse.supermarketfx.dto.tm;
 import javafx.scene.control.Button;
 import lombok.*;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 5/10/2025 3:10 PM
- * Project: SupermarketFX
- * --------------------------------------------
- **/
+
 
 @AllArgsConstructor
 @NoArgsConstructor

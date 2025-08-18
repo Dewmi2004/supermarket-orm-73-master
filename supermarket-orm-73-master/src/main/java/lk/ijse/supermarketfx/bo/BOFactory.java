@@ -4,16 +4,7 @@ import lk.ijse.supermarketfx.bo.custom.impl.CustomerBOImpl;
 import lk.ijse.supermarketfx.bo.custom.impl.ItemBOImpl;
 import lk.ijse.supermarketfx.bo.custom.impl.PlaceOrderBOImpl;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/11/2025 10:19 AM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
+
 
 public class BOFactory {
     private static BOFactory boFactory;

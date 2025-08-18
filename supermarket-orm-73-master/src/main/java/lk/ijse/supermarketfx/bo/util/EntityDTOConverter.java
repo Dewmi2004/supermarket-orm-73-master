@@ -3,16 +3,6 @@ package lk.ijse.supermarketfx.bo.util;
 import lk.ijse.supermarketfx.dto.CustomerDTO;
 import lk.ijse.supermarketfx.entity.Customer;
 
-/**
- * --------------------------------------------
- * Author: Shamodha Sahan
- * GitHub: https://github.com/shamodhas
- * Website: https://shamodha.com
- * --------------------------------------------
- * Created: 7/11/2025 2:13 PM
- * Project: Supermarket-layered
- * --------------------------------------------
- **/
 
 // modal mapper
 public class EntityDTOConverter {
