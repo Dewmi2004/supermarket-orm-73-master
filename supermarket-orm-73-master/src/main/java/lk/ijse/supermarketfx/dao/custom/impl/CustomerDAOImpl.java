@@ -9,12 +9,14 @@ import lk.ijse.supermarketfx.util.CrudUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 public class CustomerDAOImpl implements CustomerDAO {
@@ -100,55 +102,116 @@ public class CustomerDAOImpl implements CustomerDAO {
         }finally {
             sessionFactory.close();
         }
-    }
+     }
 
     @Override
     public List<String> getAllIds() throws SQLException {
-        ResultSet resultSet = SQLUtil.execute("SELECT customer_id FROM customer");
-        List<String> ids = new ArrayList<>();
-        while (resultSet.next()) {
-            ids.add(resultSet.getString(1));
+//        ResultSet resultSet = SQLUtil.execute("SELECT customer_id FROM customer");
+//        List<String> ids = new ArrayList<>();
+//        while (resultSet.next()) {
+//            ids.add(resultSet.getString(1));
+//        }
+//        return ids;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            Query<Customer> quary = session.createQuery("from Customer", Customer.class);
+              List<Customer> customerList = quary.list();
+              customerList.forEach(customer -> System.out.println(customer.toString()));
+            transaction.commit();
+            return customerList.stream().map(Customer::getId).collect(Collectors.toList());
+        }catch(Exception e){
+            transaction.rollback();
+            return new ArrayList<>();
+        }finally {
+            session.close();
+
         }
-        return ids;
     }
 
     @Override
     public Optional<Customer> findById(String id) throws SQLException {
-        ResultSet resultSet = SQLUtil.execute("SELECT * FROM customer WHERE customer_id = ?", id);
-        if (resultSet.next()) {
-            return Optional.of(new Customer(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getString(4),
-                    resultSet.getString(5)
-            ));
+ //       Session session = FactoryConfiguration.getInstance().getSession();
+//        Client customer = session.get(Client.class, 2);
+//        System.out.println(customer.toString());
+        //----------
+//        ResultSet resultSet = SQLUtil.execute("SELECT * FROM customer WHERE customer_id = ?", id);
+//        if (resultSet.next()) {
+//            return Optional.of(new Customer(
+//                    resultSet.getString(1),
+//                    resultSet.getString(2),
+//                    resultSet.getString(3),
+//                    resultSet.getString(4),
+//                    resultSet.getString(5)
+//            ));
+//        }
+//        return Optional.empty();
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            Customer customer = session.get(Customer.class, id);
+            transaction.commit();
+            return Optional.ofNullable(customer);
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return Optional.empty();
+        } finally {
+            session.close();
         }
-        return Optional.empty();
+
     }
 
     @Override
-    public List<Customer> search(String text) throws SQLException {
-        String searchText = "%" + text + "%";
-        ResultSet resultSet = SQLUtil.execute(
-                "SELECT * FROM customer WHERE customer_id LIKE ? OR name LIKE ? OR nic LIKE ? OR email LIKE ? OR phone LIKE ?",
-                searchText, searchText, searchText, searchText, searchText
-        );
+          public List<Customer> search(String text) throws SQLException {
+//        String searchText = "%" + text + "%";
+//        ResultSet resultSet = SQLUtil.execute(
+//                "SELECT * FROM customer WHERE customer_id LIKE ? OR name LIKE ? OR nic LIKE ? OR email LIKE ? OR phone LIKE ?",
+//                searchText, searchText, searchText, searchText, searchText
+//        );
+//
+//        List<Customer> list = new ArrayList<>();
+//        while (resultSet.next()) {
+//            Customer customer = new Customer(
+//                    resultSet.getString(1),
+//                    resultSet.getString(2),
+//                    resultSet.getString(3),
+//                    resultSet.getString(4),
+//                    resultSet.getString(5)
+//            );
+//            list.add(customer);
+//        }
+//        return list;
+//    }
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
 
-        List<Customer> list = new ArrayList<>();
-        while (resultSet.next()) {
-            Customer customer = new Customer(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getString(4),
-                    resultSet.getString(5)
+        try {
+            String searchText = "%" + text + "%";
+
+            Query<Customer> query = session.createQuery(
+                    "FROM Customer c WHERE c.customerId LIKE :text " +
+                            "OR c.name LIKE :text " +
+                            "OR c.nic LIKE :text " +
+                            "OR c.email LIKE :text " +
+                            "OR c.phone LIKE :text",
+                    Customer.class
             );
-            list.add(customer);
-        }
-        return list;
-    }
+            query.setParameter("text", searchText);
 
+            List<Customer> list = query.list();
+
+            transaction.commit();
+            return list;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return List.of(); // return empty list on error
+        } finally {
+            session.close();
+        }
+    }
     @Override
     public Optional<Customer> findCustomerByNic(String nic) throws SQLException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM customer WHERE nic = ?", nic);
